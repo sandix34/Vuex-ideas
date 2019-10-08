@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>Welcome to Ideas.io</h1>
-    <Ideas/>
     <IdeaCreate/>
+    <Ideas/>
   </div>
 </template>
 
