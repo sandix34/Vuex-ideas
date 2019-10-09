@@ -17,5 +17,13 @@ export default new Vuex.Store({
     createIdea(context, payload) {
       context.commit('CREATE_IDEAS', payload);
     }
+  },
+  getters: {
+    allIdeas(state) {
+     const allIdeas =  Object.keys(state.ideas).map(key => state.ideas[key]);
+     console.log(allIdeas);
+     return allIdeas;
+     
+    }
   }
 });
