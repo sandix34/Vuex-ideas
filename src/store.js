@@ -11,6 +11,7 @@ export default new Vuex.Store({
     CREATE_IDEAS(state, payload) {
       const id = Date.now();
       state.ideas[id] = payload;
+      state.ideas = { ...state.ideas };
     }
   },
   actions: {
