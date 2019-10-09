@@ -17,9 +17,12 @@ export default {
 	},
   methods: {
     create() {
-			console.log(this.title);
-			this.title = "";
-			
+			const idea = {
+        createdAt: new Date(),
+        title: this.title,
+      };
+      this.$store.commit('CREATE_IDEAS', idea);
+			this.title = "";	
 		}
   }
 };
