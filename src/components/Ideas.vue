@@ -2,8 +2,8 @@
   <div>
     <h1>Ideas</h1>
     <ul>
-      <draggable >
-        <Idea v-for="idea in allIdeas" :key="idea.id" :item="idea"/>
+      <draggable class="ideas" v-model="allIdeas">
+        <Idea v-for="idea in allIdeas" :key="idea.id" :item="idea" />
       </draggable>
     </ul>
   </div>
@@ -19,12 +19,23 @@ export default {
     Idea,
   },
   computed: {
-    allIdeas() {
-      return this.$store.getters.allIdeas; 
-    }
+    allIdeas: {
+      get() {
+        return this.$store.getters.allIdeas;
+      },
+      set(value) {
+        this.$store.dispatch("saveIdeasOrdering", value);
+      } 
+    }  
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+  .ideas {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  }
 </style>
