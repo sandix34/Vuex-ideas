@@ -1,6 +1,6 @@
 <template>
-  <div class="idea">
-    <h3>{{ item.title }}</h3>
+  <div class="flex items-stretch  border border-grey-500 rounded-sm w-56 h-16 m-2 cursor-move shadow-lg">
+    <h3 class="self-center flex-1 ">{{ item.title }}</h3>
   </div>
 </template>
 
@@ -14,13 +14,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.idea {
-  width: 200px;
-  height: 55px;
-  border: 2px solid #666;
-  padding-bottom: 5px;
-  cursor: pointer;
-}
-</style>

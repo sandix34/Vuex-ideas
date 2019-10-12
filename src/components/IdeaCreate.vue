@@ -2,8 +2,8 @@
   <div>
     <form @submit.prevent="create">
       <label for="idea-title">Ideas's title</label><br>
-      <input type="text" id="idea-title" v-model="title" />
-      <button type="submit">create</button>
+      <input class=" border border-green-600 p-1 rounded-sm" type="text" id="idea-title" v-model="title" />
+      <button class="bg-green-700 text-white p-1 ml-1 rounded-sm " type="submit">create</button>
     </form>
   </div>
 </template>
@@ -28,6 +28,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

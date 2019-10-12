@@ -1,26 +1,26 @@
 <template>
-  <div>
-    <h1>Ideas</h1>
+  <div class="mt-8">
+    <h1 class="text-3xl ">Ideas</h1>
     <div>
-      <draggable class="ideas" v-model="allIdeas" group="ideas">
+      <draggable class="flex flex-wrap flex-col content-center h-48 " v-model="allIdeas" group="ideas">
         <Idea v-for="idea in allIdeas" :key="idea.id" :item="idea" />
       </draggable>
     </div>
-    <div class="destination">
+    <div class="flex justify-around">
       <div>
-        <h3>Courses</h3>
+        <h3 class="text-3xl">Courses</h3>
         <draggable v-model="courses" group="ideas">
           <Idea v-for="course in courses" :key="course.id" :item="course" />
         </draggable>
       </div>
       <div>
-        <h3>Paper work</h3>
+        <h3 class="text-3xl">Paper work</h3>
         <draggable class="ideas" v-model="paperWork" group="ideas">
           <Idea v-for="pw in paperWork" :key="pw.id" :item="pw" />
         </draggable>
       </div>
       <div>
-        <h3>Appointments</h3>
+        <h3 class="text-3xl">Appointments</h3>
         <draggable v-model="appointments" group="ideas">
           <Idea v-for="apt in appointments" :key="apt.id" :item="apt" />
         </draggable>
@@ -75,17 +75,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.ideas {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  height: 30vh;
-}
-.destination {
-  display: flex;
-  justify-content: space-evenly;
-}
-</style>
